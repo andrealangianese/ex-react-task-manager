@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import { GlobalContext } from "../context/GlobalContext"
+import TaskRow from "../components/TaskRow";
 
 export default function TaskList() {
     const { task } = useContext(GlobalContext)
-    console.log(task);
 
     return (
         <>
@@ -17,7 +17,9 @@ export default function TaskList() {
                     </tr>
                 </thead>
                 <tbody>
-
+                    {task.map(t => (
+                        <TaskRow key={t.id} task={t} />
+                    ))}
                 </tbody>
             </table>
         </>

@@ -23,3 +23,50 @@ nav a.active {
   text-decoration: underline;
   color: black;
 }
+
+/* Stile per la tabella dei Task */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid #eee;
+
+}
+
+td.todo {
+  background-color: orange;
+}
+
+td.doing {
+  background-color: rgb(224, 246, 31);
+}
+
+td.done {
+  background-color: rgb(12, 235, 120);
+}
+
+th {
+  background-color: #f4f4f4;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: #666;
+}
+
+tbody tr:hover {
+  background-color: #fafafa;
+}
+
+h3 {
+  color: #333;
+  border-left: 4px solid #4a90e2;
+  padding-left: 10px;
+}
