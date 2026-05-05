@@ -70,3 +70,49 @@ h3 {
   border-left: 4px solid #4a90e2;
   padding-left: 10px;
 }
+
+/* stile del form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.9rem;
+  gap: 5px;
+}
+
+/* Stile comune per Input, Textarea e Select */
+input[type="text"],
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+
+textarea {
+  min-height: 80px;
+  resize: vertical
+}

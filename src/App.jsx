@@ -11,7 +11,7 @@ export default function App() {
       <BrowserRouter>
 
         <nav>
-          <NavLink to="/add">aggingi task</NavLink>
+          <NavLink to="/add">aggiungi task</NavLink>
           <NavLink to="/">lista task</NavLink>
         </nav>
 
