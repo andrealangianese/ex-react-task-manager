@@ -7,10 +7,10 @@ export function GlobalProvider({ children }) {
 
     // salvo il valore di useTask in una variabile che passerò sotto coon lo spread
 
-    const taskVar = useTasks()
+    const task = useTasks()
 
     return (
-        <GlobalContext.Provider value={{ ...taskVar }}>
+        <GlobalContext.Provider value={{ ...task }}>
             {children}
         </GlobalContext.Provider>
     )
