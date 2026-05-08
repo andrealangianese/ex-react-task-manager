@@ -27,8 +27,16 @@ function useTasks() {
         setTask(prev => [...prev, task])
     }
 
-    const removeTask = () => {
-
+    const removeTask = async taskId => {
+        const res = await fetch(`${VITE_API_URL}/tasks/${taskId}`, {
+            method: 'DELETE'
+        });
+        //risposta del server
+        const { success, message } = await res.json()
+        if (!success)
+            throw new Error(message)
+        //Aggiornamento dello Stato Locale
+        setTask(prev => prev.filter(t => t.id !== taskId))
     }
     const updateTask = () => {
 
