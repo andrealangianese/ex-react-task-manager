@@ -38,8 +38,18 @@ function useTasks() {
         //Aggiornamento dello Stato Locale
         setTask(prev => prev.filter(t => t.id !== taskId))
     }
-    const updateTask = () => {
-
+    const updateTask = async updatedTask => {
+        //chiamata al server
+        const res = await fetch(`${VITE_API_URL}/tasks/${updatedTask.id}`, {
+            method: 'PUT',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedTask)
+        });
+        //risposta del server
+        const { success, message, task } = await res.json()
+        if (!success)
+            throw new Error(message)
+        setTask(p => p.map(t => t.id === task.id ? task : t))
     }
 
     return { task, addTask, removeTask, updateTask }
